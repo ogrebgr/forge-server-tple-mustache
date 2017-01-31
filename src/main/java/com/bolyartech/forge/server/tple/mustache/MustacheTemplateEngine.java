@@ -1,7 +1,6 @@
 package com.bolyartech.forge.server.tple.mustache;
 
 import com.bolyartech.forge.server.misc.TemplateEngine;
-import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
 
