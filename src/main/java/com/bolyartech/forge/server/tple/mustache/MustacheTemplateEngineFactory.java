@@ -5,6 +5,8 @@ import com.bolyartech.forge.server.misc.TemplateEngineFactory;
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.MustacheFactory;
 
+import java.io.File;
+
 
 public class MustacheTemplateEngineFactory implements TemplateEngineFactory {
     private final MustacheFactory mMustacheFactory;
@@ -16,6 +18,10 @@ public class MustacheTemplateEngineFactory implements TemplateEngineFactory {
 
 
     public MustacheTemplateEngineFactory(String templatePathPrefix) {
+        if (templatePathPrefix.startsWith(File.separator)) {
+            templatePathPrefix = templatePathPrefix.substring(1);
+        }
+
         mMustacheFactory = new DefaultMustacheFactory(templatePathPrefix);
     }
 
